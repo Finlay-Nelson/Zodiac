@@ -22,7 +22,7 @@ jobs:
           ls -la
           python -m pip install --upgrade pip
           pip install pyinstaller
-          pip install -r ./requirements.txt
+          pip install -r $GITHUB_WORKSPACE/requirements.txt
 
 
       - name: Build executable with PyInstaller
