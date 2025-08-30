@@ -16,13 +16,6 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Debug repo contents
-        run: |
-          Write-Host "Current directory: $PWD"
-          Get-ChildItem
-          Write-Host "Listing workflows folder:"
-          Get-ChildItem .github\workflows
-
       - name: Install dependencies
         run: |
           echo "Current directory: $(pwd)"
@@ -30,8 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyinstaller
           pip install -r $GITHUB_WORKSPACE/requirements.txt
-
-
+          
       - name: Build executable with PyInstaller
         run: |
           pyinstaller --onefile --name microscopy-assembly src/cli_main.py
