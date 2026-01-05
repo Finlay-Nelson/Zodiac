@@ -20,11 +20,3 @@ cd microscopy-assembly
 conda env create -f environment.yml
 conda activate microscopy
 python src/cli_main.py --help
-
-
-
-
-
-
-
-
